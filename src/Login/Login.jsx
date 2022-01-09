@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import iconGoogle from "../assets/googleicon.png";
 import {
@@ -23,6 +23,7 @@ function Login() {
       }
     });
   }, []);
+
   const handleLogin = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)

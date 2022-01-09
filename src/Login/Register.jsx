@@ -146,7 +146,7 @@ function Register({ setFalseRegister }) {
               onChange={(e) => handleInput(e, "name")}
               className="w-full bg-transparent focus:outline-none ml-5 pr-8"
               type="text"
-              placeholder="User name"
+              placeholder="Nama"
               required
             />
           </div>

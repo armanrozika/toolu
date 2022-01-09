@@ -9,7 +9,6 @@ function PrivateRoute() {
     let mounted = true;
     onAuthStateChanged(auth, (u) => {
       if (u) {
-        console.log(u);
         if (mounted) {
           setUser(u.uid);
           setLoading(false);
