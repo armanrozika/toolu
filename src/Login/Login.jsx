@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useQuery } from "react-query";
 
 import iconGoogle from "../assets/googleicon.png";
 import {
@@ -16,6 +17,10 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isRegister, setIsRegister] = useState(false);
+  const [errField, setErrField] = useState({
+    status: false,
+    text: "",
+  });
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -24,15 +29,31 @@ function Login() {
     });
   }, []);
 
+  const loginUser = () => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+
+  const { isLoading, isFetching, refetch, data } = useQuery(
+    "login",
+    loginUser,
+    {
+      enabled: false,
+      retry: false,
+      onError: (error) => {
+        if (error.code === "auth/user-not-found") {
+          setErrField({ status: true, text: "Email tidak ditemukan" });
+        }
+        if (error.code === "auth/wrong-password") {
+          setErrField({ status: true, text: "Password salah" });
+        }
+      },
+      onSuccess: () => navigate("/"),
+    }
+  );
+
   const handleLogin = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((credential) => {
-        console.log(credential);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    refetch();
   };
 
   const setFalseRegister = () => {
@@ -66,6 +87,9 @@ function Login() {
               </span>
             </p>
             <div className="w-4/5 md:w-96 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-center">
+              {errField.status && (
+                <p className="mb-2 text-red-400">{errField.text}</p>
+              )}
               <h2 className="text-3xl text-gray-600 font-bold mb-5">Sign In</h2>
               <form className="w-full" onSubmit={handleLogin}>
                 <div className="relative w-full bg-slate-100 px-6 py-3 rounded-full overflow-hidden mb-5 pl-9">
@@ -91,8 +115,8 @@ function Login() {
                 <p className="text-right mt-2 text-blue-500 text-sm cursor-pointer">
                   Lupa password?
                 </p>
-                <button className="bg-teal-400 text-white mt-5 px-10 py-3 font-bold rounded-full text-sm hover:bg-teal-500">
-                  LOGIN
+                <button className="w-1/2 bg-teal-400 text-white mt-5 px-10 py-3 font-bold rounded-full text-sm hover:bg-teal-500">
+                  {isLoading || isFetching ? "LOGGING IN..." : "LOGIN"}
                 </button>
               </form>
               <p className="mt-8 mb-2 text-gray-600">
