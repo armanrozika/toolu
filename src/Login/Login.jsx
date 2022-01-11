@@ -7,6 +7,8 @@ import {
   auth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  authProvider,
+  signInWithPopup,
 } from "../firebase";
 import voting from "../assets/voting-light.svg";
 import { MailIcon, LockIcon } from "../assets/icon";
@@ -29,9 +31,9 @@ function Login() {
     });
   }, []);
 
-  const loginUser = () => {
-    return signInWithEmailAndPassword(auth, email, password);
-  };
+  const loginUser = () => signInWithEmailAndPassword(auth, email, password);
+
+  const loginGoogle = () => signInWithPopup(auth, authProvider);
 
   const { isLoading, isFetching, refetch, data } = useQuery(
     "login",
@@ -50,10 +52,31 @@ function Login() {
       onSuccess: () => navigate("/"),
     }
   );
+  const {
+    isLoading: isLoading2,
+    isFetching: isFetching2,
+    refetch: refetch2,
+    data: data2,
+  } = useQuery("login-google", loginGoogle, {
+    enabled: false,
+    retry: false,
+    onError: (error) => {
+      // if (error.code === "auth/user-not-found") {
+      //   setErrField({ status: true, text: "Email tidak ditemukan" });
+      // }
+      // if (error.code === "auth/wrong-password") {
+      //   setErrField({ status: true, text: "Password salah" });
+      // }
+    },
+    onSuccess: () => navigate("/"),
+  });
 
   const handleLogin = (e) => {
     e.preventDefault();
     refetch();
+  };
+  const handleGoogleLogin = () => {
+    refetch2();
   };
 
   const setFalseRegister = () => {
@@ -123,7 +146,10 @@ function Login() {
                 Atau sign in menggunakan akun Google
               </p>
               <div className="flex justify-center">
-                <div className="mx-1 cursor-pointer">
+                <div
+                  onClick={handleGoogleLogin}
+                  className="mx-1 cursor-pointer"
+                >
                   <img className="w-9" src={iconGoogle} alt="logo-google" />
                 </div>
               </div>
