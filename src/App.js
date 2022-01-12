@@ -5,6 +5,7 @@ import Login from "./Login/Login";
 import Dashboard from "./Dashboard/Dashboard";
 import PrivateRoute from "./PrivateRoute";
 import PasswordReset from "./Login/PasswordReset";
+import NotFound from "./NotFound/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -22,7 +23,7 @@ function App() {
                 <Route path="akun" element={<p>akun</p>} />
               </Route>
             </Route>
-            <Route path="*" element={<p>Not found</p>} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </div>
