@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useQuery } from "react-query";
 
 import iconGoogle from "../assets/googleicon.png";
@@ -35,38 +35,24 @@ function Login() {
 
   const loginGoogle = () => signInWithPopup(auth, authProvider);
 
-  const { isLoading, isFetching, refetch, data } = useQuery(
-    "login",
-    loginUser,
-    {
-      enabled: false,
-      retry: false,
-      onError: (error) => {
-        if (error.code === "auth/user-not-found") {
-          setErrField({ status: true, text: "Email tidak ditemukan" });
-        }
-        if (error.code === "auth/wrong-password") {
-          setErrField({ status: true, text: "Password salah" });
-        }
-      },
-      onSuccess: () => navigate("/"),
-    }
-  );
-  const {
-    isLoading: isLoading2,
-    isFetching: isFetching2,
-    refetch: refetch2,
-    data: data2,
-  } = useQuery("login-google", loginGoogle, {
+  const { isLoading, isFetching, refetch } = useQuery("login", loginUser, {
     enabled: false,
     retry: false,
     onError: (error) => {
-      // if (error.code === "auth/user-not-found") {
-      //   setErrField({ status: true, text: "Email tidak ditemukan" });
-      // }
-      // if (error.code === "auth/wrong-password") {
-      //   setErrField({ status: true, text: "Password salah" });
-      // }
+      if (error.code === "auth/user-not-found") {
+        setErrField({ status: true, text: "Email tidak ditemukan" });
+      }
+      if (error.code === "auth/wrong-password") {
+        setErrField({ status: true, text: "Password salah" });
+      }
+    },
+    onSuccess: () => navigate("/"),
+  });
+  const { refetch: refetch2 } = useQuery("login-google", loginGoogle, {
+    enabled: false,
+    retry: false,
+    onError: (error) => {
+      // what could be the error here?
     },
     onSuccess: () => navigate("/"),
   });
@@ -135,9 +121,13 @@ function Login() {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
-                <p className="text-right mt-2 text-blue-500 text-sm cursor-pointer">
+                <Link
+                  to="/reset-password"
+                  target="_blank"
+                  className="block text-right mt-2 text-blue-500 text-sm cursor-pointer"
+                >
                   Lupa password?
-                </p>
+                </Link>
                 <button className="w-1/2 bg-teal-400 text-white mt-5 px-10 py-3 font-bold rounded-full text-sm hover:bg-teal-500">
                   {isLoading || isFetching ? "LOGGING IN..." : "LOGIN"}
                 </button>
