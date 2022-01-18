@@ -12,7 +12,7 @@ function PrivateRoute() {
         if (mounted) {
           setUser(u.uid);
           setLoading(false);
-          console.log(u);
+          // console.log(u);
         }
       } else {
         if (mounted) {
