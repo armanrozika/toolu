@@ -6,6 +6,7 @@ import Dashboard from "./Dashboard/Dashboard";
 import PrivateRoute from "./PrivateRoute";
 import PasswordReset from "./Login/PasswordReset";
 import NotFound from "./NotFound/NotFound";
+import Overview from "./Overview/Overview";
 
 const queryClient = new QueryClient();
 
@@ -19,10 +20,7 @@ function App() {
             <Route path="/reset-password" element={<PasswordReset />} />
             <Route element={<PrivateRoute />}>
               <Route path="/" element={<Dashboard />}>
-                <Route
-                  path="/"
-                  element={<p className="pl-64 pr-96">setting</p>}
-                />
+                <Route path="/" element={<Overview />} />
                 <Route path="akun" element={<p>akun</p>} />
               </Route>
             </Route>

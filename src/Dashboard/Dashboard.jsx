@@ -10,11 +10,13 @@ function Dashboard() {
   return (
     <div className="">
       <SideBar />
-      <div className="flex">
-        <Outlet />
-        <div className="fixed right-0 top-0 bg-slate-100 w-96 h-screen">
-          <p>chat</p>
+      <div className="bg-slate-50 pl-64 pr-96 h-screen overflow-y-scroll">
+        <div className="p-8">
+          <Outlet />
         </div>
+      </div>
+      <div className="fixed right-0 top-0 bg-white w-96 h-screen p-5">
+        <p>chat</p>
       </div>
 
       {/* <button onClick={handleSignout}>Signout</button>
