@@ -8,11 +8,15 @@ function Dashboard() {
     signOut(auth);
   };
   return (
-    <div className="flex">
+    <div className="">
       <SideBar />
-      <div>
+      <div className="flex">
         <Outlet />
+        <div className="fixed right-0 top-0 bg-slate-100 w-96 h-screen">
+          <p>chat</p>
+        </div>
       </div>
+
       {/* <button onClick={handleSignout}>Signout</button>
       <Link to="/setting">setting</Link>
       <Link to="/akun">akun</Link> */}

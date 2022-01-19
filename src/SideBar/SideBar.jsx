@@ -5,7 +5,7 @@ import "./SideBar.css";
 
 function SideBar() {
   return (
-    <div className="w-64 h-screen border-r-2 border-slate-100 px-9">
+    <div className="w-64 h-screen border-r-2 border-slate-100 px-9 fixed left-0 top-0">
       <h1 className="pt-2 text-teal-400 text-3xl md:text-3xl font-bold mt-2 mb-20">
         Tool<span className="text-orange-200">u</span>
       </h1>

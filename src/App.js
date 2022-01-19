@@ -19,7 +19,10 @@ function App() {
             <Route path="/reset-password" element={<PasswordReset />} />
             <Route element={<PrivateRoute />}>
               <Route path="/" element={<Dashboard />}>
-                <Route path="/" element={<p>setting</p>} />
+                <Route
+                  path="/"
+                  element={<p className="pl-64 pr-96">setting</p>}
+                />
                 <Route path="akun" element={<p>akun</p>} />
               </Route>
             </Route>
