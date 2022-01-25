@@ -1,8 +1,5 @@
 import React from "react";
-import dataArranging from "../assets/dataArranging.png";
-import suaraTertinggi from "../assets/suaraTertinggi.png";
-import golput from "../assets/golput.png";
-import tidakSah from "../assets/tidakSah.png";
+
 import paslon from "../assets/paslon.png";
 import files from "../assets/files.png";
 
@@ -40,46 +37,34 @@ function Overview() {
           <p className="mt-2 text-sm text-gray-400">Bulaksumur Timur</p>
         </div>
       </div>
-      <p className="mt-2 text-sm text-gray-500 italic">
+      <p className="mt-2 text-xs text-gray-500 italic text-right">
         Perolehan terbanyak suara Anda pada level TPS
       </p>
       {/* Below overview_________________________________________________ */}
       <h2 className="mt-10 font-bold text-slate-500 mb-3">Top Rank</h2>
       <div className="flex ">
         <div className="bg-white rounded-lg w-48 p-3 text-center shadow-lg shadow-gray-100">
-          <div className="border-b-2 border-slate-50">
-            <img
-              src={paslon}
-              alt=""
-              className="w-full my-0 mx-auto rounded-full"
-            />
-            <p className="bg-orange-50 rounded-full text-sm py-1 mt-0 text-slate-600 font-bold">
+          <div className="border-b-2 border-slate-100 pb-2">
+            <img src={paslon} alt="" className="w-3/5 my-0 mx-auto" />
+            <p className="mt-2 text-sm text-gray-500">Pasangan No. 3</p>
+            <p className="bg-orange-50 rounded-full text-sm py-1 text-slate-600 font-bold">
               12.750
             </p>
-            <p className="mt-2 text-sm text-gray-500">Pasangan No. 3</p>
           </div>
-          <div className="border-b-2 border-slate-50 mt-9">
-            <img
-              src={paslon}
-              alt=""
-              className="w-4/5 my-0 mx-auto rounded-full"
-            />
-            <p className="bg-orange-50 rounded-full text-sm py-1 mt-3 text-slate-600 font-bold">
+          <div className="border-b-2 border-slate-100 mt-5 pb-2">
+            <img src={paslon} alt="" className="w-3/5 my-0 mx-auto" />
+            <p className="mt-2 text-sm text-gray-500">Pasangan No. 1</p>
+            <p className="bg-orange-50 rounded-full text-sm py-1  text-slate-600 font-bold">
               11.099
             </p>
-            <p className="mt-2 text-sm text-gray-500">Pasangan No. 1</p>
           </div>
 
-          <div className="border-b-2 border-slate-50 mt-9">
-            <img
-              src={paslon}
-              alt=""
-              className="w-4/5 my-0 mx-auto rounded-full"
-            />
-            <p className="bg-orange-50 rounded-full text-sm py-1 mt-3 text-slate-600 font-bold">
+          <div className=" mt-5">
+            <img src={paslon} alt="" className="w-3/5 my-0 mx-auto" />
+            <p className="mt-2 text-sm text-gray-500">Pasangan No. 4</p>
+            <p className="bg-orange-50 rounded-full text-sm py-1 text-slate-600 font-bold">
               550
             </p>
-            <p className="mt-2 text-sm text-gray-500">Pasangan No. 4</p>
           </div>
         </div>
 
