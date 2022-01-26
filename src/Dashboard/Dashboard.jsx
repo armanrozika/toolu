@@ -1,6 +1,7 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import SideBar from "../SideBar/SideBar";
+import InfoPenting from "../InfoPenting/InfoPenting";
 
 function Dashboard() {
   return (
@@ -13,8 +14,9 @@ function Dashboard() {
           </div>
         </div>
       </div>
-      <div className="fixed right-0 top-0 bg-white w-96 h-screen p-5">
-        <p>chat</p>
+      <div className="fixed right-0 top-0 bg-white w-96 h-screen p-5 overflow-y-scroll">
+        <h2 className="text-sm font-bold text-slate-500">Informasi Penting</h2>
+        <InfoPenting />
       </div>
     </div>
   );

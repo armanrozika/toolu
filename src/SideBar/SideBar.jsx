@@ -24,18 +24,18 @@ function SideBar() {
           <p className="ml-5">Overview</p>
         </NavLink>
         <NavLink
-          className="hover:text-teal-400 flex items-center mb-10 text-sm font-bold text-gray-400 px-4 py-3 w-full"
-          to="/team"
-        >
-          <PeopleIcon />
-          <p className="ml-5">Team</p>
-        </NavLink>
-        <NavLink
-          className="hover:text-teal-400 flex items-center text-sm font-bold text-gray-400 px-4 py-3 w-full"
+          className="hover:text-teal-400 flex mb-10 items-center text-sm font-bold text-gray-400 px-4 py-3 w-full"
           to="/result"
         >
           <AnalyticsIcon />
           <p className="ml-5">Result details</p>
+        </NavLink>
+        <NavLink
+          className="hover:text-teal-400 flex items-center  text-sm font-bold text-gray-400 px-4 py-3 w-full"
+          to="/team"
+        >
+          <PeopleIcon />
+          <p className="ml-5">Team</p>
         </NavLink>
       </div>
       <div className="w-full absolute -bottom-12 left-0 text-center">
