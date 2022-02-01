@@ -7,6 +7,9 @@ import PrivateRoute from "./PrivateRoute";
 import PasswordReset from "./Login/PasswordReset";
 import NotFound from "./NotFound/NotFound";
 import Overview from "./Overview/Overview";
+import Result from "./Result/Result";
+import Team from "./Team/Team";
+import Akun from "./Akun/Akun";
 
 const queryClient = new QueryClient();
 
@@ -21,7 +24,9 @@ function App() {
             <Route element={<PrivateRoute />}>
               <Route path="/" element={<Dashboard />}>
                 <Route path="/" element={<Overview />} />
-                <Route path="akun" element={<p>akun</p>} />
+                <Route path="/result" element={<Result />} />
+                <Route path="/team" element={<Team />} />
+                <Route path="/akun" element={<Akun />} />
               </Route>
             </Route>
             <Route path="*" element={<NotFound />} />
