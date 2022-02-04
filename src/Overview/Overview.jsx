@@ -44,7 +44,7 @@ function Overview() {
       <h2 className="mt-10 font-bold text-slate-500 mb-3">Top Rank</h2>
       <div className="flex ">
         <div className="bg-white rounded-lg w-48 p-3 text-center shadow-lg shadow-gray-100">
-          <div className="border-b-2 border-slate-100 pb-2">
+          <div className="border-b-2 border-slate-100 pb-2 mt-2">
             <img src={paslon} alt="" className="w-2/5 my-0 mx-auto" />
             <p className="mt-2 text-sm text-gray-500">Pasangan No. 3</p>
             <p className="bg-orange-50 rounded-full text-sm py-1 text-slate-500 font-bold">
