@@ -38,6 +38,30 @@ function Result() {
           <span className="font-bold">40</span> tidak sah
         </h2>
       </div>
+      <div className="mt-8 bg-white rounded-lg shadow-gray-100 shadow lg px-8 pb-8 ">
+        <div className="flex justify-between items-center pt-8 border-teal-50 border-b-2 pb-8">
+          <div>
+            <p className="font-bold text-2xl text-slate-600 w-24 h-24 bg-orange-100 rounded-xl justify-center flex items-center">
+              1
+            </p>
+          </div>
+          <p className="text-sm text-gray-500">Pasangan calon Nomor 1</p>
+          <p className="font-bold text-slate-600 w-24 h-24 bg-teal-100 rounded-xl justify-center flex items-center">
+            350
+          </p>
+        </div>
+        <div className="flex justify-between items-center pt-8 border-teal-50 border-b-2 pb-8">
+          <div>
+            <p className="font-bold text-2xl text-slate-600 w-24 h-24 bg-orange-100 rounded-xl justify-center flex items-center">
+              2
+            </p>
+          </div>
+          <p className="text-sm text-gray-500">Pasangan calon Nomor 2</p>
+          <p className="font-bold text-slate-600 w-24 h-24 bg-teal-100 rounded-xl justify-center flex items-center">
+            799350
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
