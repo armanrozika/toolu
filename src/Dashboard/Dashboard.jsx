@@ -9,7 +9,7 @@ function Dashboard() {
       <SideBar />
       <div className="bg-slate-50 pl-64 pr-96">
         <div className="h-screen overflow-y-scroll">
-          <div className="p-8">
+          <div className="p-8 h-full">
             <Outlet />
           </div>
         </div>

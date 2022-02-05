@@ -20,7 +20,8 @@ function SideBar() {
       <h1 className="pt-2 text-teal-400 text-3xl md:text-3xl font-bold mt-2 mb-20">
         Tool<span className="text-orange-200">u</span>
       </h1>
-      <div className="">
+      <div>
+        <p>TIMSES PILGUB JATENG Ali</p>
         <NavLink
           className="hover:text-teal-400 flex items-center mb-10 text-sm font-bold text-gray-400 px-4 py-3 w-full"
           to="/"

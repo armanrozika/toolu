@@ -39,7 +39,7 @@ function Result() {
         </h2>
       </div>
       <div className="mt-8 bg-white rounded-lg shadow-gray-100 shadow lg px-8 pb-8 ">
-        <div className="flex justify-between items-center pt-8 border-teal-50 border-b-2 pb-8">
+        <div className="flex justify-between items-center pt-8 border-teal-100 border-b pb-8">
           <div>
             <p className="font-bold text-2xl text-slate-600 w-24 h-24 bg-orange-100 rounded-xl justify-center flex items-center">
               1
@@ -50,7 +50,7 @@ function Result() {
             350
           </p>
         </div>
-        <div className="flex justify-between items-center pt-8 border-teal-50 border-b-2 pb-8">
+        <div className="flex justify-between items-center pt-8 border-teal-100 border-b pb-8">
           <div>
             <p className="font-bold text-2xl text-slate-600 w-24 h-24 bg-orange-100 rounded-xl justify-center flex items-center">
               2
