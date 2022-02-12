@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { signOut, auth } from "../firebase";
+import Select from "react-select";
 
 import {
   HomeIcon,
@@ -12,16 +13,20 @@ import dataArranging from "../assets/dataArranging.png";
 import "./SideBar.css";
 
 function SideBar() {
+  const optionsTeam = [
+    { value: "id1", label: "TIM SUKSES MAJU" },
+    { value: "id2", label: "CAGUB NTB 3" },
+  ];
   const handleSignout = () => {
     signOut(auth);
   };
   return (
-    <div className="w-64 h-screen px-9 fixed left-0 top-0 bg-white">
-      <h1 className="pt-2 text-teal-400 text-3xl md:text-3xl font-bold mt-2 mb-20">
+    <div className="w-64 h-screen px-9 fixed left-0 top-0 bg-white hidden md:block">
+      <h1 className="pt-2 text-teal-400 text-3xl md:text-3xl font-bold mt-2 mb-10">
         Tool<span className="text-orange-200">u</span>
       </h1>
-      <div>
-        <p>TIMSES PILGUB JATENG Ali</p>
+      <Select className="text-slate-600" options={optionsTeam} />
+      <div className="mt-10">
         <NavLink
           className="hover:text-teal-400 flex items-center mb-10 text-sm font-bold text-gray-400 px-4 py-3 w-full"
           to="/"
