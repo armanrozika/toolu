@@ -7,9 +7,9 @@ function Dashboard() {
   return (
     <div className="h-screen">
       <SideBar />
-      <div className="bg-slate-50 pl-3 pr-3 md:pl-64 md:pr-96">
-        <div className="h-screen overflow-y-scroll">
-          <div className="p-8 h-full">
+      <div className="bg-slate-50 pl-2 pr-2 md:pl-64 md:pr-96">
+        <div className="md:h-screen overflow-y-scroll">
+          <div className="p-5 md:p-8 h-full">
             <Outlet />
           </div>
         </div>
