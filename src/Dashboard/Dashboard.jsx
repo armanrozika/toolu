@@ -2,14 +2,16 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import SideBar from "../SideBar/SideBar";
 import InfoPenting from "../InfoPenting/InfoPenting";
+import MobileMenu from "../SideBar/MobileMenu";
 
 function Dashboard() {
   return (
     <div className="h-screen">
       <SideBar />
-      <div className="bg-slate-50 pl-2 pr-2 md:pl-64 md:pr-96">
+      <MobileMenu />
+      <div className="bg-slate-50 pl-2 pr-2 md:pl-64 md:pr-96 h-screen">
         <div className="md:h-screen overflow-y-scroll">
-          <div className="p-5 md:p-8 h-full">
+          <div className="p-5 md:p-8 pb-20 h-full">
             <Outlet />
           </div>
         </div>
