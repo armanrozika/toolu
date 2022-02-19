@@ -1,4 +1,5 @@
 import React from "react";
+import { TrashFillIcon } from "../assets/icon";
 
 function InfoPenting() {
   return (
@@ -13,13 +14,19 @@ function InfoPenting() {
         </button>
       </div>
       <ul>
-        <li className="list-disc text-slate-500 text-sm mb-5">
-          Mohon semua anggota untuk menambahkan nomor TPS nya masing masing
-        </li>
-        <li className="list-disc text-slate-500 text-sm mb-5">
-          TPS 9 di kabupaten maumere tengah itu dobel, anggota yang ngisi mohon
-          bisa dicek lagi biar nggak bingung, thanks
-        </li>
+        <div className="flex mb-5 justify-between items-center">
+          <li className="list-disc text-slate-500 text-sm w-5/6">
+            Mohon semua anggota untuk menambahkan nomor TPS nya masing masing
+          </li>
+          <TrashFillIcon className="cursor-pointer" />
+        </div>
+        <div className="flex mb-5 justify-between items-center">
+          <li className="list-disc text-slate-500 text-sm w-5/6">
+            TPS 9 di kabupaten maumere tengah itu dobel, anggota yang ngisi
+            mohon bisa dicek lagi biar nggak bingung, thanks
+          </li>
+          <TrashFillIcon className="cursor-pointer" />
+        </div>
       </ul>
     </div>
   );

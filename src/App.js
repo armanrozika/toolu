@@ -10,6 +10,7 @@ import Overview from "./Overview/Overview";
 import Result from "./Result/Result";
 import Team from "./Team/Team";
 import Akun from "./Akun/Akun";
+import Info from "./Info/Info";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ function App() {
                 <Route path="/result" element={<Result />} />
                 <Route path="/team" element={<Team />} />
                 <Route path="/akun" element={<Akun />} />
+                <Route path="/info" element={<Info />} />
               </Route>
             </Route>
             <Route path="*" element={<NotFound />} />

@@ -1,9 +1,19 @@
 import React from "react";
+import Select from "react-select";
 
 function Team() {
+  const optionsTeam = [
+    { value: "id1", label: "TIM SUKSES MAJU" },
+    { value: "id2", label: "CAGUB NTB 3" },
+  ];
   return (
     <div className="h-full">
       <h2 className="font-bold text-xl text-teal-400 mb-4">Team</h2>
+      <Select
+        className="block md:hidden text-slate-600 mb-3"
+        options={optionsTeam}
+      />
+
       <button className="text-sm border-none bg-teal-500 text-white px-5 py-2 rounded-lg mr-4">
         Buat team baru
       </button>
@@ -13,7 +23,7 @@ function Team() {
 
       <form>
         <input
-          className="mt-6 px-5 py-2 rounded-full w-96 border-teal-400 bg-white border"
+          className="mt-6 px-5 py-2 rounded-full w-56 md:w-96 border-teal-400 bg-white border"
           type="text"
           placeholder="Cari"
         />

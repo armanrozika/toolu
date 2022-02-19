@@ -70,28 +70,28 @@ function Overview() {
 
         <div className="bg-white w-full md:ml-8 rounded-lg shadow-lg shadow-gray-100 px-5 md:px-20 py-10 mt-5 md:mt-0">
           <div className="flex items-center border-b border-teal-100">
-            <img className="w-24 mr-5" src={files} alt="data-koleksi" />
+            <img className="w-20 md:w-24 mr-5" src={files} alt="data-koleksi" />
             <h1 className="text-slate-500 text-sm">
               Pasangan calon Anda memperoleh suara tertinggi pada Kabupaten
               Bontang Timur
             </h1>
           </div>
           <div className="flex items-center border-b border-teal-100">
-            <img className="w-24 mr-5" src={files} alt="data-koleksi" />
+            <img className="w-20 md:w-24 mr-5" src={files} alt="data-koleksi" />
             <h1 className="text-slate-500 text-sm">
               Pasangan calon Anda memperoleh suara terendah pada Kabupaten
               Mamuju
             </h1>
           </div>
           <div className="flex items-center border-b border-teal-100">
-            <img className="w-24 mr-5" src={files} alt="data-koleksi" />
+            <img className="w-20 md:w-24 mr-5" src={files} alt="data-koleksi" />
             <h1 className="text-slate-500 text-sm">
               Dari keseluruhan pemilih terdaftar, 700 di antaranya golput/tidak
               memilih
             </h1>
           </div>
           <div className="flex items-center">
-            <img className="w-24 mr-5" src={files} alt="data-koleksi" />
+            <img className="w-20 md:w-24 mr-5" src={files} alt="data-koleksi" />
             <h1 className="text-slate-500 text-sm">
               Dari keseluruhan surat suara, terdapat sebanyak 35 suara tidak sah
             </h1>
