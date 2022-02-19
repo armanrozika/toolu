@@ -25,7 +25,7 @@ function SideBar() {
       <h1 className="pt-2 text-teal-400 text-3xl md:text-3xl font-bold mt-2 mb-10">
         Tool<span className="text-orange-200">u</span>
       </h1>
-      <Select className="text-slate-600" options={optionsTeam} />
+      {/* <Select className="text-slate-600" options={optionsTeam} /> */}
       <div className="mt-10">
         <NavLink
           className="hover:text-teal-400 flex items-center mb-10 text-sm font-bold text-gray-400 px-4 py-3 w-full"

@@ -9,10 +9,10 @@ function Team() {
   return (
     <div className="h-full">
       <h2 className="font-bold text-xl text-teal-400 mb-4">Team</h2>
-      <Select
+      {/* <Select
         className="block md:hidden text-slate-600 mb-3"
         options={optionsTeam}
-      />
+      /> */}
 
       <button className="text-sm border-none bg-teal-500 text-white px-5 py-2 rounded-lg mr-4">
         Buat team baru
