@@ -1,7 +1,9 @@
 import React from "react";
 import Select from "react-select";
 
-function Modal({ isShowed }) {
+import { CloseCircleIcon } from "../assets/icon";
+
+function Modal({ isShowed, closeModal, isEdit }) {
   const optionsKab = [
     { value: "lombokTengah", label: "Lombok Tengah" },
     { value: "lombokBarat", label: "Lombok Barat" },
@@ -24,7 +26,14 @@ function Modal({ isShowed }) {
         isShowed ? "block" : "hidden"
       } fixed top-0 left-0 bg-slate-800/50 w-screen h-screen z-10`}
     >
-      <div className="w-1/3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-xl">
+      <div className="w-5/6 md:w-1/3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-xl">
+        <div
+          onClick={closeModal}
+          className="absolute -top-2 -right-2 cursor-pointer"
+        >
+          <CloseCircleIcon />
+        </div>
+
         <Select
           className="mb-3 text-slate-600"
           options={optionsKab}
@@ -47,11 +56,11 @@ function Modal({ isShowed }) {
         />
         <input
           className="p-2 w-64 rounded-md border border-slate-300 mb-3"
-          type="text"
+          type="number"
           placeholder="Jumlah suara"
         />
         <button className="text-sm block rounded-md bg-teal-500 text-white  py-2 px-5">
-          Tambah
+          {isEdit ? "Edit" : "Tambah"}
         </button>
       </div>
     </div>

@@ -26,6 +26,9 @@ function Akun() {
       <button className="mt-9 text-sm bg-rose-500 text-white px-5 py-2 rounded-md">
         Hapus akun
       </button>
+      <button className="mt-9 text-sm bg-orange-500 text-white px-5 py-2 rounded-md ml-5">
+        Keluar dari team
+      </button>
     </div>
   );
 }
